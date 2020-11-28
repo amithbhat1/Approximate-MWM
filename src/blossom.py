@@ -265,12 +265,15 @@ def finding_aug_path(G,M,Blossom_stack=[]):
 if __name__ == '__main__':
     
     n_list = [20,50,100]
-    d_list = [0.3, 0.5, 0.7, 0.9]
-    niter = 5
+    d_list = [0.3, 0.5]
+    niter = 2
 
     results = np.ndarray((len(d_list),len(n_list)))
     results.fill(0)
+    visited=[0]*len(n_list)
     for i in range(niter):
+        if visited[i]!=0:
+            exit()            
         print("starting iteration ", i)
         iter_start = time.time()
         for n in n_list:
@@ -286,29 +289,14 @@ if __name__ == '__main__':
                 print("\t\tTook ", b-a,"seconds")
         iter_end = time.time()
         print("Iteration ", i, " took ", iter_end - iter_start)
-    
+        if i>1:
+            exit()
     results /= float(niter)
     print (results)
     np.save("seq_results", results)
     
     sparse_results = np.ndarray((1,len(n_list)))
     sparse_results.fill(0)
-    for i in range(niter):
-        print("starting iteration ", i)
-        iter_start = time.time()
-        for n in n_list:
-            print("\t with n =",n)
-            G = generate_random_graph(n,0.1)
-            M = nx.Graph()
-            a = time.time()
-            MM = find_maximum_matching(G, M)
-            print(MM)
-            b = time.time()
-            sparse_results[0][n_list.index(n)] += b - a
-            print("\t\ttook ", b-a)
-        iter_end = time.time()
-        print("Iteration ", i, " took ", iter_end - iter_start)
-    
     sparse_results /= float(niter)
     print (sparse_results)
     np.save("sparse_seq_results", sparse_results)
