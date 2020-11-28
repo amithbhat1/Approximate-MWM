@@ -31,4 +31,4 @@ Instructions to run each file :
 
 1) To run the Edmonds' Algorithm, please enter the command - python3 blossom.py
 
-2)To run the Drake - Hougardy Algorithm, please enter the command - python3 Drake_Hougardy_Matching.py
+2) To run the Drake - Hougardy Algorithm, please enter the command - python3 Drake_Hougardy_Matching.py
