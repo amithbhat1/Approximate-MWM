@@ -6,7 +6,7 @@ In this project, we have implemented two algorithms to solve different facets of
 2) Drake - Hougardy's Approximation Algorithm which provides a good approximation to the exact solution to the MWM probem.
 
 
-The project has been tested to work in the Ubuntu Operating System - In Windows, some package errors occur. Please run this project in a Linux environment.
+The project has been tested to work in the Ubuntu Operating System - in Windows, some package errors occur. Please run this project in a Linux environment.
 
 
 The code files are in the /src sub-folder, which also contains a Makefile. Detailed instructions to run those files are mentioned there. The references used for this
