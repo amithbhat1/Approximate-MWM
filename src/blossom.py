@@ -264,7 +264,7 @@ def finding_aug_path(G,M,Blossom_stack=[]):
 
 if __name__ == '__main__':
     
-    n_list = [20, 50, 100, 150, 200]
+    n_list = [20, 100, 200]
     d_list = [0.3, 0.5, 0.7, 0.9]
     niter = 5
 
